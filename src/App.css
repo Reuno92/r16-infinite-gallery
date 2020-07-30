@@ -36,3 +36,57 @@
     transform: rotate(360deg);
   }
 }
+
+
+form {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 8rem;
+}
+
+form input {
+  width: 70%;
+  border: 1px solid #CCC;
+  border-radius: .256rem;
+  padding: .512rem;
+}
+
+form button {
+  width: 20%;
+  border : 1px solid darkblue;
+  border-radius: .256rem;
+  padding: .512rem;
+  background: darkblue;
+  color: #FFF;
+}
+
+.image-grid {
+  display: grid;
+  margin: auto 8rem;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.image {
+  background: #FFF;
+  padding: 3px;
+  border-radius: 3px;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,.06);
+  transition: .3s cubic-bezier(.68, -.55, .265, 1.55);
+}
+
+.image:hover {
+  transform: translateY(-2px);
+}
+
+.image img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image:nth-child(7n) {
+  grid-column-end: span 6;
+  min-height: 50vh;
+}

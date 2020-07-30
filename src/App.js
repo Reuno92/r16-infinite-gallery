@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<section className="App">
+			<h1>Unsplash Image gallery</h1>
+
+			<form>
+				<input type="text" placeholder="Search unsplash…"/>
+				<button>Search</button>
+			</form>
+
+			<section className="image-grid">
+				{
+					[...Array(100)].map((_, index) => (
+						(
+							<div className="image" key={index}>
+								<img className="card-img-top"
+										 src={"https://placekitten.com/g/1920/1080"}
+										 alt={"kitten sample number #" + {index}}/>
+							</div>
+						)
+					))
+				}
+			</section>
+		</section>
+	);
 }
 
 export default App;
